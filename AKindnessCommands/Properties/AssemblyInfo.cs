@@ -7,11 +7,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle( "AKindnessCommands" )]
-[assembly: AssemblyDescription( "" )]
+[assembly: AssemblyDescription("Some basic kindness for .Net or C# to using command line.")]
 [assembly: AssemblyConfiguration( "" )]
 [assembly: AssemblyCompany( "Microsoft" )]
 [assembly: AssemblyProduct( "AKindnessCommands" )]
-[assembly: AssemblyCopyright( "Copyright © Microsoft 2011" )]
+[assembly: AssemblyCopyright( "Copyright © Gergő Balogh 2013" )]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
 
