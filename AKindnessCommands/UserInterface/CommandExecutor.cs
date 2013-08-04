@@ -1,12 +1,13 @@
 //AKindnessCommands:
 using System;
 using System.Collections.Generic;
-using AKindnessCommands.EventRelated;
 using AKindnessCommands.Model.Emitter;
 using AKindnessCommands.Model.Input;
 using AKindnessCommands.Model.Output;
 using AKindnessCommands.Model.Wrapper;
 using AKindnessCommands.Extension;
+using AKindnessCommons.EventRelated;
+using AKindnessCommons.Extension;
 
 namespace AKindnessCommands.UserInterface
 {
@@ -79,7 +80,7 @@ namespace AKindnessCommands.UserInterface
 			}
 		}
 
-		void context_InputRefreshed( object sender, EventRelated.EventArgs<InputCollector> e )
+		void context_InputRefreshed( object sender, EventArgs<InputCollector> e )
 		{
 			foreach ( var _emitter in emitters )
 			{
@@ -92,7 +93,7 @@ namespace AKindnessCommands.UserInterface
 			}
 		}
 
-		void context_NewInputReceived( object sender, EventRelated.EventArgs<InputCollector> e )
+		void context_NewInputReceived( object sender, EventArgs<InputCollector> e )
 		{
 			foreach ( var _emitter in emitters )
 			{
@@ -113,7 +114,7 @@ namespace AKindnessCommands.UserInterface
 			}
 		}
 
-		void context_NewOutputReceived( object sender, EventRelated.EventArgs<OutputCollector> e )
+		void context_NewOutputReceived( object sender, EventArgs<OutputCollector> e )
 		{
 			while ( e.Value.Any( ) )
 			{

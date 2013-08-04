@@ -8,6 +8,7 @@ using AKindnessCommands.Extension;
 using AKindnessCommands.Model.Output;
 using AKindnessCommands.Model.Token;
 using AKindnessCommands.Model.Wrapper;
+using AKindnessCommons.Extension;
 
 namespace AKindnessCommands.Model.Emitter
 {
