@@ -3,7 +3,7 @@
 using System;
 using System.Threading;
 
-namespace AKindnessCommons.Extension
+namespace AKindnessCommons.EventRelated
 {
 	public static
 	class EventHandlerExtension

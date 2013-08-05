@@ -5,7 +5,6 @@ using System.Text;
 using System.Linq;
 using AKindnessCommands.Extension;
 using AKindnessCommons.EventRelated;
-using AKindnessCommons.Extension;
 
 namespace AKindnessCommands.Model.Input
 {

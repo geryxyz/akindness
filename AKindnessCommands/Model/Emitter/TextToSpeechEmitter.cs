@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Speech.Synthesis;
 using System.Text;
 using AKindnessCommands.Model.Output;
-using AKindnessCommands.Model.Wrapper;
+using AKindnessCommons.Wrapper;
 
 namespace AKindnessCommands.Model.Emitter
 {

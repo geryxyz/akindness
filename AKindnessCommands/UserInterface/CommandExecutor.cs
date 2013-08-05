@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using AKindnessCommands.Model.Emitter;
 using AKindnessCommands.Model.Input;
 using AKindnessCommands.Model.Output;
-using AKindnessCommands.Model.Wrapper;
 using AKindnessCommands.Extension;
 using AKindnessCommons.EventRelated;
-using AKindnessCommons.Extension;
+using AKindnessCommons.Wrapper;
 
 namespace AKindnessCommands.UserInterface
 {

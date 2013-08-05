@@ -1,6 +1,6 @@
 //AKindnessCommands:
 using System;
-using AKindnessCommands.Model.Wrapper;
+using AKindnessCommons.Wrapper;
 
 namespace AKindnessCommands.Model.Output
 {

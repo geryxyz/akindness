@@ -9,9 +9,8 @@ using AKindnessCommands.Model;
 using AKindnessCommands.Model.Input;
 using AKindnessCommands.Model.Output;
 using AKindnessCommands.Extension;
-using AKindnessCommands.Model.Wrapper;
 using AKindnessCommons.EventRelated;
-using AKindnessCommons.Extension;
+using AKindnessCommons.Wrapper;
 
 namespace AKindnessCommands.UserInterface
 {

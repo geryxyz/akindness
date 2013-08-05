@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Linq;
 using AKindnessCommands.Model.Input;
 using AKindnessCommands.Model.Output;
-using AKindnessCommands.Model.Wrapper;
+using AKindnessCommons.Wrapper;
 using Wintellect.PowerCollections;
 
 namespace AKindnessCommands.Model.Emitter
