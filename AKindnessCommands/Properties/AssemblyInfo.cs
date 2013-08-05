@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle( "AKindnessCommands" )]
 [assembly: AssemblyDescription("Some basic kindness for .Net or C# to using command line.")]
 [assembly: AssemblyConfiguration( "" )]
-[assembly: AssemblyCompany( "Microsoft" )]
+[assembly: AssemblyCompany( "Gergő Balogh" )]
 [assembly: AssemblyProduct( "AKindnessCommands" )]
 [assembly: AssemblyCopyright( "Copyright © Gergő Balogh 2013" )]
 [assembly: AssemblyTrademark( "" )]
