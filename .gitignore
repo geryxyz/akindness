@@ -48,3 +48,4 @@ test/*
 #nuget
 packages/*
 !packages/repositories.config
+!NuGet.exe
