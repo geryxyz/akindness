@@ -49,8 +49,8 @@ namespace AKindnessCommands.Model.Token
 			for ( int _i = 0; _i < _subescapes.Count( ); _i++ )
 			{
 				_subescapes[ _i ] = _subescapes[ _i ].
-					Replace( "{0}s".Format( _escapeChar ), " " ).
-					Replace( "{0}c".Format( _escapeChar ), ":" );
+					Replace( "{0}s".Form( _escapeChar ), " " ).
+					Replace( "{0}c".Form( _escapeChar ), ":" );
 			}
 			StringBuilder _builder = new StringBuilder( _subescapes.First( ) ?? string.Empty );
 			_subescapes.Skip( 1 ).ToList( ).ForEach(
@@ -78,17 +78,17 @@ namespace AKindnessCommands.Model.Token
 		{
 			if ( Postfix==string.Empty )
 			{
-				return "{0}:{1}".Format( ( object )Prefix, Value );
+				return "{0}:{1}".Form( ( object )Prefix, Value );
 			}
 			if ( Prefix==string.Empty )
 			{
-				return "{0}:{1}".Format( ( object )Value, Postfix );
+				return "{0}:{1}".Form( ( object )Value, Postfix );
 			}
 			if ( Prefix==string.Empty&&Postfix==string.Empty )
 			{
-				return ":{0}".Format( ( object )Value );
+				return ":{0}".Form( ( object )Value );
 			}
-			return "{0}:{1}:{2}".Format( ( object )Prefix, Value, Postfix );
+			return "{0}:{1}:{2}".Form( ( object )Prefix, Value, Postfix );
 		}
 	}
 }

@@ -1,5 +1,7 @@
 //AKindnessCommands:
 using System;
+using System.Text;
+using AKindnessCommands.Formating;
 using AKindnessCommons.Wrapper;
 
 namespace AKindnessCommands.Extension
@@ -7,12 +9,38 @@ namespace AKindnessCommands.Extension
 	public static
 	class StringExtension
 	{
+		#region formating
 		public static
-		string Format( this string self, params object[] parameters)
+		string Form( this string self, params object[] parameters)
 		{
 			return string.Format( self, parameters );
 		}
 
+		public static
+		TOut Form<TOut>(this string self, Format<string,TOut> format)
+		{
+			return format.Apply( self );
+		}
+
+		public static
+		TOut Form<TOut>(this string self, Format<StringBuilder,TOut> format)
+		{
+			return format.Apply( new StringBuilder( self ) );
+		}
+
+		public static
+		string CropIf(this string self, int? width)
+		{
+			if ( width.HasValue &&
+			     width < self.Length)
+			{
+				return self.Substring( 0, width.Value );
+			}
+			return self;
+		}
+		#endregion
+
+		#region out
 		public static
 		void ColorWrite( this string text, ConsoleColor textColor, ConsoleColor backgroundColor = ConsoleColor.Black )
 		{
@@ -40,7 +68,9 @@ namespace AKindnessCommands.Extension
 			text.ColorWrite( textColor, backgroundColor );
 			Console.WriteLine( );
 		}
+		#endregion
 
+		#region decorat
 		public static
 		PropertyDecorator<string> Decorat(this string self)
 		{
@@ -95,17 +125,7 @@ namespace AKindnessCommands.Extension
 			_decorated.Set( "do not read", true );
 			return _decorated;
 		}
-
-		public static
-		string CropIf(this string self, int? width)
-		{
-			if ( width.HasValue &&
-				width < self.Length)
-			{
-				return self.Substring( 0, width.Value );
-			}
-			return self;
-		}
+		#endregion
 	}
 }
 

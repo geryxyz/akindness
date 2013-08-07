@@ -35,7 +35,7 @@ namespace AKindnessCommands.Model.ConsoleUI
 				double _donePrecent = State / Max;
 				if ( IsDumpState )
 				{
-					"{0:0.00} of {1:0.00} is {2:p}".Format(
+					"{0:0.00} of {1:0.00} is {2:p}".Form(
 						State, Max, _donePrecent ).ColorWriteLine(
 							Forground, Background );
 				}

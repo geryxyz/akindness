@@ -83,7 +83,7 @@ namespace AKindnessCommands.UserInterface
 					#region
 					PropertyDecorator< string > _message =
 						new PropertyDecorator< string >(
-							"There is {0} command defined in this context.".Format( _context.commands.Count( ) ) );
+							"There is {0} command defined in this context.".Form( _context.commands.Count( ) ) );
 					_message.Set( "language", "english" );
 					_context.MainOutput.Enqueue(
 						new CommandOutput(
@@ -138,7 +138,7 @@ namespace AKindnessCommands.UserInterface
 
 					PropertyDecorator< string > _message =
 						new PropertyDecorator< string >(
-							"Commands from {0} to {1} are the followings.".Format( _from, _to ) );
+							"Commands from {0} to {1} are the followings.".Form( _from, _to ) );
 					_message.Set( "language", "english" );
 					_context.MainOutput.Enqueue(
 						new CommandOutput(
@@ -164,7 +164,7 @@ namespace AKindnessCommands.UserInterface
 					string _path = _invocation[@"^from$:"].Value;
 					var _inputLines = loadFile( _path );
 					MainOutput.Enqueue(
-						"Totaly {0} input lines loaded. Start execution now.".Format( _inputLines.Count( ) ).DecoratAsEnglish( ) );
+						"Totaly {0} input lines loaded. Start execution now.".Form( _inputLines.Count( ) ).DecoratAsEnglish( ) );
 					MainInput.AddRange( _inputLines );
 					#endregion
 				} );
@@ -175,7 +175,7 @@ namespace AKindnessCommands.UserInterface
 					#region
 					int _timeout = int.Parse( _invocation[ @"^for$:^milliseconds$" ].Value );
 					_context.MainOutput.Enqueue(
-						"Waiting for {0} milliseconds.".Format( _timeout ).DecoratAsEnglish( ) );
+						"Waiting for {0} milliseconds.".Form( _timeout ).DecoratAsEnglish( ) );
 					Thread.Sleep( _timeout );
 					#endregion
 				} );
@@ -194,7 +194,7 @@ namespace AKindnessCommands.UserInterface
 			using ( StreamReader _input = new StreamReader( path ) )
 			{
 				MainOutput.Enqueue(
-					"File open from {0}".Format(
+					"File open from {0}".Form(
 						( object )path ).DecoratAsEnglish( ) );
 				while ( !_input.EndOfStream )
 				{
@@ -210,14 +210,14 @@ namespace AKindnessCommands.UserInterface
 						else
 						{
 							_inputLines.Add(
-								"label as:{0}".Format(
+								"label as:{0}".Form(
 									( object )_currentLine.Replace( " ", "~s" ).Replace( ":", "~c" ) ) );
 							_inputLines.Add( _currentLine );
 						}
 					}
 				}
 				MainOutput.Enqueue(
-					"{0} lines loaded".Format(
+					"{0} lines loaded".Form(
 						_inputLines.Count( ) ).DecoratAsEnglish( ) );
 			}
 			return _inputLines;
@@ -297,7 +297,7 @@ namespace AKindnessCommands.UserInterface
 			{
 				PropertyDecorator< string > _message =
 					new PropertyDecorator< string >(
-						"The command-fingerprint \"{0}\" is undefined in the current context.".Format( ( object )userInput ) );
+						"The command-fingerprint \"{0}\" is undefined in the current context.".Form( ( object )userInput ) );
 				_message.Set( "language", "english" );
 				SystemOutput.Enqueue(
 					new CommandOutput(

@@ -36,6 +36,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="PowerCollections">
       <HintPath>..\packages\XAct.Wintellect.PowerCollections.0.0.1\lib\net20\PowerCollections.dll</HintPath>
     </Reference>
@@ -52,7 +55,11 @@
   <ItemGroup>
     <Compile Include="Exceptions\ExecutionExecptions.cs" />
     <Compile Include="Exceptions\SyntaxExceptions.cs" />
+    <Compile Include="Extension\StringBuilderExtension.cs" />
     <Compile Include="Extension\StringExtension.cs" />
+    <Compile Include="Formating\FormatChain.cs" />
+    <Compile Include="Formating\Format.cs" />
+    <Compile Include="Formating\IUnsafeFormat.cs" />
     <Compile Include="Model\ConsoleUI\BouncingProgressBar.cs" />
     <Compile Include="Model\ConsoleUI\FillUpProgressBar.cs" />
     <Compile Include="Model\ConsoleUI\ProgressBar.cs" />
