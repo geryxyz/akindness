@@ -57,9 +57,17 @@
     <Compile Include="Exceptions\SyntaxExceptions.cs" />
     <Compile Include="Extension\StringBuilderExtension.cs" />
     <Compile Include="Extension\StringExtension.cs" />
+    <Compile Include="Formating\Colorize.cs" />
+    <Compile Include="Formating\ConcurrentWriteable.cs" />
+    <Compile Include="Formating\Container\Colored.cs" />
     <Compile Include="Formating\FormatChain.cs" />
     <Compile Include="Formating\Format.cs" />
     <Compile Include="Formating\IUnsafeFormat.cs" />
+    <Compile Include="Formating\Container\Tagged.cs" />
+    <Compile Include="Formating\IWriteable.cs" />
+    <Compile Include="Formating\ObjectExtension.cs" />
+    <Compile Include="Formating\Replacement.cs" />
+    <Compile Include="Formating\Tag.cs" />
     <Compile Include="Model\ConsoleUI\BouncingProgressBar.cs" />
     <Compile Include="Model\ConsoleUI\FillUpProgressBar.cs" />
     <Compile Include="Model\ConsoleUI\ProgressBar.cs" />

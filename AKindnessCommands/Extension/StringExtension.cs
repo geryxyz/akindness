@@ -10,8 +10,9 @@ namespace AKindnessCommands.Extension
 	class StringExtension
 	{
 		#region formating
+		[Obsolete("Use Replacement format instead.")]
 		public static
-		string Form( this string self, params object[] parameters)
+		string LegacyForm( this string self, params object[] parameters)
 		{
 			return string.Format( self, parameters );
 		}

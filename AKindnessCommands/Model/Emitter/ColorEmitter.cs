@@ -38,21 +38,21 @@ namespace AKindnessCommands.Model.Emitter
 			switch ( output.Level )
 			{
 				case OutputLevel.Information:
-					"[i] {0} {1}\n".Form(
+					"[i] {0} {1}\n".LegacyForm(
 						output.CreationTime,
 						output.Message.Value ).ColorWrite( ConsoleColor.Cyan );
 					break;
 				case OutputLevel.Note:
-					"[*] {0}\n".Form(
+					"[*] {0}\n".LegacyForm(
 						( object )output.Message.Value ).ColorWrite( ConsoleColor.Yellow );
 					break;
 				case OutputLevel.Warning:
-					"[w] {0} {1}\n".Form(
+					"[w] {0} {1}\n".LegacyForm(
 						output.CreationTime,
 						output.Message.Value ).ColorWrite( ConsoleColor.Magenta );
 					break;
 				case OutputLevel.Error:
-					"[!] {0} {1}\n".Form(
+					"[!] {0} {1}\n".LegacyForm(
 						output.CreationTime,
 						output.Message.Value ).ColorWrite( ConsoleColor.Red );
 					break;
