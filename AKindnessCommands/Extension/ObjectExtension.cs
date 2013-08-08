@@ -31,5 +31,11 @@ namespace AKindnessCommands.Extension
 		{
 			return format.Apply( self );
 		}
+
+		public static
+		FlowConnector< TIn > Let< TIn >( this TIn input )
+		{
+			return new FlowConnector< TIn >( input );
+		}
 	}
 }

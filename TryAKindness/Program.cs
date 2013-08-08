@@ -14,6 +14,12 @@ namespace TryAKindness
 		{
 			"Examples:\n".Write( );
 			"Colorize\n".Form( new Colorize< string >( ConsoleColor.Black, ConsoleColor.Gray ) ).Write( );
+			"Colorize\n"
+				.Let( ).Colored( ConsoleColor.Black, ConsoleColor.Red ).Write( );
+			"Tagged"
+				.Let( ).Colored( ConsoleColor.Black, ConsoleColor.Red )
+				.Let( ).Tagged( "tag" )
+				.Write( );
 			"Tagged".Form( As.Tag( "tag" ) ).Write( );
 			"Question".Form( Tag<string, string >.AsQuestion ).Write( );
 			"Blue Question"

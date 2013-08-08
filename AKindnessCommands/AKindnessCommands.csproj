@@ -60,6 +60,7 @@
     <Compile Include="Formating\Colorize.cs" />
     <Compile Include="Formating\ConcurrentWriteable.cs" />
     <Compile Include="Formating\Container\Colored.cs" />
+    <Compile Include="Formating\FlowConnector.cs" />
     <Compile Include="Formating\FormatChain.cs" />
     <Compile Include="Formating\Format.cs" />
     <Compile Include="Formating\IUnsafeFormat.cs" />

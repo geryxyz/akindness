@@ -36,4 +36,14 @@ namespace AKindnessCommands.Formating.Container
 			"\n".Write( );
 		}
 	}
+
+	public static
+	class TaggedFlow
+	{
+		public static
+		Tagged<TTag,TValue> Tagged<TTag,TValue>(this FlowConnector<TValue> input, TTag tag)
+		{
+			return new Tagged< TTag, TValue >( tag, input.Value );
+		}
+	}
 }
