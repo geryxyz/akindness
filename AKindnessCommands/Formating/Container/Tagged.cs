@@ -4,17 +4,17 @@ using AKindnessCommands.Extension;
 namespace AKindnessCommands.Formating.Container
 {
 	public
-	class Tagged<TBaseType>
+	class Tagged<TTagType,TBaseType>
 	: ConcurrentWriteable
 	{
 		public
-		string Tag { get; private set; }
+		TTagType Tag { get; private set; }
 
 		public
 		TBaseType Value { get; private set; }
 
 		public
-		Tagged( string tag, TBaseType value )
+		Tagged( TTagType tag, TBaseType value )
 		{
 			Tag = tag;
 			Value = value;
@@ -23,13 +23,17 @@ namespace AKindnessCommands.Formating.Container
 		public override
 		string ToString( )
 		{
-			return "[{0}]\t{1}\n".Form( new Replacement( Tag, Value.ToString( ) ) );
+			return "[{0}]\t{1}\n".Form( new Replacement( Tag, Value ) );
 		}
 
 		protected override
 		void write( )
 		{
-			ToString( ).UnlockedWrite( );
+			"[".Write( );
+			Tag.Write( );
+			"]\t".Write( );
+			Value.Write( );
+			"\n".Write( );
 		}
 	}
 }

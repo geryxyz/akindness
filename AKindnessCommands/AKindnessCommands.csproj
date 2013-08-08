@@ -65,8 +65,12 @@
     <Compile Include="Formating\IUnsafeFormat.cs" />
     <Compile Include="Formating\Container\Tagged.cs" />
     <Compile Include="Formating\IWriteable.cs" />
-    <Compile Include="Formating\ObjectExtension.cs" />
+    <Compile Include="Extension\ObjectExtension.cs" />
+    <Compile Include="Formating\NormalizeDouble.cs" />
+    <Compile Include="Formating\NormalizeInt.cs" />
     <Compile Include="Formating\Replacement.cs" />
+    <Compile Include="Formating\ScaleInt.cs" />
+    <Compile Include="Formating\ScaleDouble.cs" />
     <Compile Include="Formating\Tag.cs" />
     <Compile Include="Model\ConsoleUI\BouncingProgressBar.cs" />
     <Compile Include="Model\ConsoleUI\FillUpProgressBar.cs" />

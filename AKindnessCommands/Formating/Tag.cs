@@ -3,85 +3,95 @@
 namespace AKindnessCommands.Formating
 {
 	public
-	class Tag<TIn>
-	: Format<TIn,Tagged<TIn > >
+	class Tag<TTag,TIn>
+	: Format<TIn,Tagged<TTag,TIn > >
 	{
-		string tag;
+		TTag tag;
 
 		public
-		Tag( string tag )
+		Tag( TTag tag )
 		{
 			this.tag = tag;
 		}
 
 		public override
-		Tagged< TIn > Apply( TIn input )
+		Tagged<TTag, TIn > Apply( TIn input )
 		{
-			return new Tagged< TIn >( tag, input );
+			return new Tagged<TTag, TIn >( tag, input );
 		}
 
 		static
-		Tag<TIn> question;
+		Tag<string,TIn> question;
 
 		public static 
-		Tag<TIn> AsQuestion
+		Tag<string,TIn> AsQuestion
 		{
 			get
 			{
 				if ( question == null )
 				{
-					question = new Tag< TIn >( "?" );
+					question = new Tag<string, TIn >( "?" );
 				}
 				return question;
 			}
 		}
 
 		static
-		Tag<TIn> information;
+		Tag<string,TIn> information;
 
 		public static 
-		Tag<TIn> AsInformation
+		Tag<string,TIn> AsInformation
 		{
 			get
 			{
 				if ( information == null )
 				{
-					information = new Tag< TIn >( ":" );
+					information = new Tag<string, TIn >( ":" );
 				}
 				return information;
 			}
 		}
 
 		static
-		Tag<TIn> warning;
+		Tag<string,TIn> warning;
 
 		public static 
-		Tag<TIn> AsWarning
+		Tag<string,TIn> AsWarning
 		{
 			get
 			{
 				if ( warning == null )
 				{
-					warning = new Tag< TIn >( "*" );
+					warning = new Tag<string, TIn >( "*" );
 				}
 				return warning;
 			}
 		}
 
 		static
-		Tag<TIn> error;
+		Tag<string,TIn> error;
 
 		public static 
-		Tag<TIn> AsError
+		Tag<string,TIn> AsError
 		{
 			get
 			{
 				if ( error == null )
 				{
-					error = new Tag< TIn >( "!" );
+					error = new Tag<string, TIn >( "!" );
 				}
 				return error;
 			}
+		}
+	}
+
+	public static partial
+	class As
+	{
+		public static
+		Tag< TTag, string > Tag< TTag >( TTag tag )
+		{
+			return new Tag< TTag, string >( tag );
 		}
 	}
 }

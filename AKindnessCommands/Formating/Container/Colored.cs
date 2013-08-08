@@ -1,4 +1,5 @@
 using System;
+using AKindnessCommands.Extension;
 
 namespace AKindnessCommands.Formating.Container
 {
@@ -30,7 +31,7 @@ namespace AKindnessCommands.Formating.Container
 			ConsoleColor _backgroundTemp = Console.BackgroundColor;
 			Console.ForegroundColor = TextColor;
 			Console.BackgroundColor = BackgroundColor;
-			Value.UnlockedWrite( );
+			Value.Write( );
 			Console.ForegroundColor = _textTemp;
 			Console.BackgroundColor = _backgroundTemp;
 		}

@@ -15,12 +15,6 @@ namespace AKindnessCommands.Formating
 			}
 		}
 
-		public
-		void UnlockedWrite( )
-		{
-			write( );
-		}
-
 		protected abstract
 		void write( );
 	}

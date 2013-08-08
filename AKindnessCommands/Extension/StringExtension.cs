@@ -18,12 +18,6 @@ namespace AKindnessCommands.Extension
 		}
 
 		public static
-		TOut Form<TOut>(this string self, Format<string,TOut> format)
-		{
-			return format.Apply( self );
-		}
-
-		public static
 		TOut Form<TOut>(this string self, Format<StringBuilder,TOut> format)
 		{
 			return format.Apply( new StringBuilder( self ) );
