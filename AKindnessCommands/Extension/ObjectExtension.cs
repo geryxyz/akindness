@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using AKindnessCommands.Formating;
 
 namespace AKindnessCommands.Extension
@@ -27,14 +28,11 @@ namespace AKindnessCommands.Extension
 		}
 
 		public static
-		TOut Form<TIn,TOut>(this TIn self, Format<TIn,TOut> format)
-		{
-			return format.Apply( self );
-		}
-
-		public static
 		FlowConnector< TIn > Let< TIn >( this TIn input )
 		{
+			Debug.Assert(
+				!( input is IFlowConnector ),
+				"I do not intent to use this function more then one in a row. However you can use it that way for debuging or tracing." );
 			return new FlowConnector< TIn >( input );
 		}
 	}

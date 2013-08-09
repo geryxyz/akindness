@@ -1,5 +1,6 @@
 ﻿using System;
 using AKindnessCommands.Extension;
+using AKindnessCommands.Formating.Flow;
 
 namespace AKindnessCommands.Formating.Container
 {
@@ -23,7 +24,7 @@ namespace AKindnessCommands.Formating.Container
 		public override
 		string ToString( )
 		{
-			return "[{0}]\t{1}\n".Form( new Replacement( Tag, Value ) );
+			return "[{0}]\t{1}\n".Let( ).Format( Tag, Value );
 		}
 
 		protected override
@@ -34,16 +35,6 @@ namespace AKindnessCommands.Formating.Container
 			"]\t".Write( );
 			Value.Write( );
 			"\n".Write( );
-		}
-	}
-
-	public static
-	class TaggedFlow
-	{
-		public static
-		Tagged<TTag,TValue> Tagged<TTag,TValue>(this FlowConnector<TValue> input, TTag tag)
-		{
-			return new Tagged< TTag, TValue >( tag, input.Value );
 		}
 	}
 }

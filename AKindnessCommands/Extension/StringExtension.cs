@@ -18,12 +18,6 @@ namespace AKindnessCommands.Extension
 		}
 
 		public static
-		TOut Form<TOut>(this string self, Format<StringBuilder,TOut> format)
-		{
-			return format.Apply( new StringBuilder( self ) );
-		}
-
-		public static
 		string CropIf(this string self, int? width)
 		{
 			if ( width.HasValue &&

@@ -2,6 +2,7 @@
 {
 	public
 	class FlowConnector<TIn>
+	: IFlowConnector
 	{
 		public
 		TIn Value { get; private set; }

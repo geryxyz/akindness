@@ -36,14 +36,4 @@ namespace AKindnessCommands.Formating.Container
 			Console.BackgroundColor = _backgroundTemp;
 		}
 	}
-
-	public static
-	class ColoredFlow
-	{
-		public static
-		Colored<TIn> Colored<TIn>(this FlowConnector<TIn> input, ConsoleColor textColor, ConsoleColor backgroundColor=ConsoleColor.Black)
-		{
-			return new Colored< TIn >( input.Value, textColor, backgroundColor );
-		}
-	}
 }
