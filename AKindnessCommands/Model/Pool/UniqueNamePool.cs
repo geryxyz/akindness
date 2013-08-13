@@ -44,7 +44,7 @@ namespace AKindnessCommands.Model.Pool
 					}
 					biggestUniquePart += Capacity;
 				}
-				return "{0}#{1}".Format( ( object )Prefix, uniqueParts.Dequeue( ) );
+				return "{0}#{1}".LegacyForm( ( object )Prefix, uniqueParts.Dequeue( ) );
 			}
 		}
 

@@ -28,9 +28,10 @@ namespace AKindnessCommons.Wrapper
 		}
 
 		public
-		void Set(string index, Enum property)
+		PropertyDecorator<TValue> Set(string index, Enum property)
 		{
 			enumPropertys[ index ] = property;
+			return this;
 		}
 
 		public
@@ -44,9 +45,10 @@ namespace AKindnessCommons.Wrapper
 		}
 
 		public
-		void Set(string index, bool property)
+		PropertyDecorator<TValue>  Set(string index, bool property)
 		{
 			boolPropertys[ index ] = property;
+			return this;
 		}
 
 		public
@@ -56,9 +58,10 @@ namespace AKindnessCommons.Wrapper
 		}
 
 		public
-		void Set(string index, double property)
+		PropertyDecorator<TValue> Set(string index, double property)
 		{
 			doublePropertys[ index ] = property;
+			return this;
 		}
 
 		public
@@ -72,9 +75,10 @@ namespace AKindnessCommons.Wrapper
 		}
 
 		public
-		void Set(string index, string property)
+		PropertyDecorator<TValue> Set(string index, string property)
 		{
 			stringPropertys[ index ] = property;
+			return this;
 		}
 
 		public
