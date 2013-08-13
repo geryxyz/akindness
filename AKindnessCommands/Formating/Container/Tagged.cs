@@ -6,7 +6,7 @@ namespace AKindnessCommands.Formating.Container
 {
 	public
 	class Tagged<TTagType,TBaseType>
-	: ConcurrentWriteable
+	: ConcurrentCommunicable
 	{
 		public
 		TTagType Tag { get; private set; }
@@ -35,6 +35,21 @@ namespace AKindnessCommands.Formating.Container
 			"]\t".Write( );
 			Value.Write( );
 			"\n".Write( );
+		}
+
+		public override
+		ConcurrentCommunicable SayAsync( )
+		{
+			Value.SayAsync( );
+			return this;
+		}
+
+		public override
+		ConcurrentCommunicable SaySync( )
+		{
+			Tag.SaySync( );
+			Value.SaySync(  );
+			return this;
 		}
 	}
 }

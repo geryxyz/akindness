@@ -12,7 +12,7 @@ namespace AKindnessCommands.Extension
 		/// </summary>
 		/// <param name="self"></param>
 		public static
-		void Write( this Object self )
+		object Write( this Object self )
 		{
 			lock ( Console.Out )
 			{
@@ -25,8 +25,44 @@ namespace AKindnessCommands.Extension
 					Console.Write( self.ToString( ) );
 				}
 			}
+			return self;
 		}
 
+		public static
+		object SayAsync(this Object self)
+		{
+			lock ( ConcurrentCommunicable.Mouth )
+			{
+				if ( self is ISpeakable )
+				{
+					( ( ISpeakable )self ).SayAsync( );
+				}
+				else
+				{
+					ConcurrentCommunicable.Mouth.SpeakAsync( self.ToString( ) );
+				}
+			}
+			return self;
+		}
+
+		public static
+		object SaySync(this Object self)
+		{
+			lock ( ConcurrentCommunicable.Mouth )
+			{
+				if ( self is ISpeakable )
+				{
+					( ( ISpeakable )self ).SaySync( );
+				}
+				else
+				{
+					ConcurrentCommunicable.Mouth.Speak( self.ToString( ) );
+				}
+			}
+			return self;
+		}
+
+	
 		public static
 		FlowConnector< TIn > Let< TIn >( this TIn input )
 		{

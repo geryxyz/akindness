@@ -5,7 +5,7 @@ namespace AKindnessCommands.Formating.Container
 {
 	public
 	class Colored< TBaseType >
-	: ConcurrentWriteable
+	: ConcurrentCommunicable
 	{
 		public
 		TBaseType Value { get; private set; }
@@ -34,6 +34,20 @@ namespace AKindnessCommands.Formating.Container
 			Value.Write( );
 			Console.ForegroundColor = _textTemp;
 			Console.BackgroundColor = _backgroundTemp;
+		}
+
+		public override
+		ConcurrentCommunicable SayAsync( )
+		{
+			Value.SayAsync( );
+			return this;
+		}
+
+		public override
+		ConcurrentCommunicable SaySync( )
+		{
+			Value.SaySync(  );
+			return this;
 		}
 	}
 }

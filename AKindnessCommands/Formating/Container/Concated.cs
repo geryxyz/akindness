@@ -6,7 +6,7 @@ namespace AKindnessCommands.Formating.Container
 {
 	public
 	class Concated<TValue,TDelimiter>
-	: ConcurrentWriteable
+	: ConcurrentCommunicable
 	{
 		List< TValue > content;
 
@@ -25,13 +25,46 @@ namespace AKindnessCommands.Formating.Container
 		{
 			if(content.Any())
 			{
-				for ( int _i = 0; _i < content.Count( ) - 1; _i++ )
+				int _count = content.Count( );
+				for ( int _i = 0; _i < _count - 1; _i++ )
 				{
 					content[ _i ].Write( );
 					Delimiter.Write( );
 				}
 				content.Last( ).Write( );
 			}
+		}
+
+		public override
+		ConcurrentCommunicable SayAsync( )
+		{
+			if(content.Any())
+			{
+				int _count = content.Count( );
+				for ( int _i = 0; _i < _count - 1; _i++ )
+				{
+					content[ _i ].SayAsync( );
+					Delimiter.SayAsync( );
+				}
+				content.Last( ).SayAsync( );
+			}
+			return this;
+		}
+
+		public override
+		ConcurrentCommunicable SaySync( )
+		{
+			if(content.Any())
+			{
+				int _count = content.Count( );
+				for ( int _i = 0; _i < _count - 1; _i++ )
+				{
+					content[ _i ].SaySync( );
+					Delimiter.SaySync( );
+				}
+				content.Last( ).SaySync( );
+			}
+			return this;
 		}
 	}
 }

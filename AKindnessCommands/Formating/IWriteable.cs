@@ -3,6 +3,6 @@
 	public
 	interface IWriteable
 	{
-		void Write( );
+		ConcurrentCommunicable Write( );
 	}
 }

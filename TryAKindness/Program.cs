@@ -39,13 +39,14 @@ namespace TryAKindness
 			"\nHeatMapped:\n".Write( );
 			for ( int _i = 0; _i < 50; _i++ )
 			{
-				_i.Let( ).HeatMapped(
-					new[ ]
-					{
-						ConsoleColor.DarkRed, ConsoleColor.Red, ConsoleColor.DarkYellow, ConsoleColor.Yellow,
-						ConsoleColor.White, ConsoleColor.Cyan, ConsoleColor.DarkCyan, ConsoleColor.Blue, ConsoleColor.DarkBlue,
-					},
-					0,50).Write( );
+				_i.Let( ).HeatColored( HeatMappedFlow.ClassicPalette, 0, 50 ).Write( );
+			}
+			for ( int _x = 20; _x < 40; _x+=7 )
+			{
+				for ( int _y = 0; _y < 5; _y++ )
+				{
+					"({0};{1})".Let( ).Format( _x, _y ).Let( ).Placed( _x, _y ).Write(  );
+				}
 			}
 
 			Console.Read( );
