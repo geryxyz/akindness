@@ -1,0 +1,51 @@
+#ignore thumbnails created by windows
+Thumbs.db
+#Ignore files build by Visual Studio
+*.obj 'cause modells are obj files.
+*.exe
+*.dll
+!external/
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+#[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+obj/
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+#ignore cvs dirs
+[Cc][Vv][Ss]/
+*.patch
+#ignore installers
+[Pp]ublish/
+[Pp]ublishing/
+#ignore docs
+doc/*
+!doc/*.pdf
+!doc/*.tex
+!doc/*.txt
+!doc/*.wxm
+#ignore learning
+try/*
+learn/*
+test/*
+*.stackdump
+#nuget
+packages/*
+!packages/repositories.config
+!NuGet.exe
