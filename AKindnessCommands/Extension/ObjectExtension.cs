@@ -39,7 +39,11 @@ namespace AKindnessCommands.Extension
 				}
 				else
 				{
-					ConcurrentCommunicable.Mouth.SpeakAsync( self.ToString( ) );
+					try
+					{
+						ConcurrentCommunicable.Mouth.SpeakAsync( self.ToString( ) );
+					}
+					catch { }
 				}
 			}
 			return self;
@@ -56,7 +60,11 @@ namespace AKindnessCommands.Extension
 				}
 				else
 				{
-					ConcurrentCommunicable.Mouth.Speak( self.ToString( ) );
+					try
+					{
+						ConcurrentCommunicable.Mouth.Speak( self.ToString( ) );
+					}
+					catch { }
 				}
 			}
 			return self;
